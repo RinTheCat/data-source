@@ -1,0 +1,1 @@
+insert into cats (full_name) values ('Barsik');

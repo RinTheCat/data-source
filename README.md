@@ -1,1 +1,3 @@
-# data-source
+##### Goals
+- 3 простых запроса к БД в параллель
+- 3 datasource
