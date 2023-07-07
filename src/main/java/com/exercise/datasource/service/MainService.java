@@ -4,28 +4,34 @@ import com.exercise.datasource.domain.Cat;
 import com.exercise.datasource.repository.MainRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
+import org.springframework.scheduling.annotation.Async;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.concurrent.CompletableFuture;
 
+@Slf4j
 @Service
 @RequiredArgsConstructor
-@Slf4j
 public class MainService {
 
     private final MainRepository repository;
 
-    public List<Cat> getAllCats() {
-        log.info("Запрос по поиску всех котов");
+    @Async
+    public CompletableFuture<List<Cat>> getAllCats() throws InterruptedException {
+        log.info("All cats");
+        Thread.sleep(10000);
         final List<Cat> result = repository.findAll();
-        log.info("Завершение запроса по поиску всех котов");
-        return result;
+        log.info("All cats, completed");
+        return CompletableFuture.completedFuture(result);
     }
 
-    public List<Cat> getCatsByName(String name) {
-        log.info("Запрос по поиску всех котов с именем {}", name);
+    @Async
+    public CompletableFuture<List<Cat>> getCatsByName(String name) throws InterruptedException {
+        log.info("Cats by name: {}", name);
+        Thread.sleep(10000);
         final List<Cat> result = repository.findCatsByFullName(name);
-        log.info("Запрос по поиску всех котов с именем {} завершен", name);
-        return result;
+        log.info("Cats by name: {}, completed", name);
+        return CompletableFuture.completedFuture(result);
     }
 }
