@@ -1,6 +1,6 @@
 package com.exercise.datasource.controller;
 
-import com.exercise.datasource.domain.Cat;
+import com.exercise.datasource.domain.cats.Cat;
 import com.exercise.datasource.service.MainService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
