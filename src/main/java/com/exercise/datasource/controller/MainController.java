@@ -1,5 +1,6 @@
 package com.exercise.datasource.controller;
 
+import com.exercise.datasource.router.ClientDatabase;
 import com.exercise.datasource.domain.Cat;
 import com.exercise.datasource.service.MainService;
 import lombok.RequiredArgsConstructor;
@@ -36,5 +37,10 @@ public class MainController {
                 "byName", result2.get()
         );
         return result;
+    }
+
+    @GetMapping("/api/{dataBase}/cat")
+    public List<Cat> getAllFromSpecificDataSource(@PathVariable ClientDatabase dataBase) throws InterruptedException, ExecutionException {
+        return service.getAllCats(dataBase).get();
     }
 }
