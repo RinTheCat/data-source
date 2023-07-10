@@ -1,7 +1,7 @@
 package com.exercise.datasource.service;
 
-import com.exercise.datasource.domain.cats.Cat;
-import com.exercise.datasource.domain.cats.CatsRepository;
+import com.exercise.datasource.domain.Cat;
+import com.exercise.datasource.repository.cats.CatsRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.scheduling.annotation.Async;

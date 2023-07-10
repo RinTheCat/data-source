@@ -1,6 +1,7 @@
 package com.exercise.datasource.config;
 
-import com.exercise.datasource.domain.cats.Cat;
+import com.exercise.datasource.domain.Cat;
+import com.exercise.datasource.repository.cats.CatsRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -26,7 +27,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackageClasses = Cat.class,
+        basePackageClasses = CatsRepository.class,
         entityManagerFactoryRef = "catsEntityManagerFactory",
         transactionManagerRef = "catsTransactionManager"
 )

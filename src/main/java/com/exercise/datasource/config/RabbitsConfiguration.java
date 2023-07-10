@@ -1,6 +1,7 @@
 package com.exercise.datasource.config;
 
-import com.exercise.datasource.domain.rabbits.Rabbit;
+import com.exercise.datasource.domain.Rabbit;
+import com.exercise.datasource.repository.rabbits.RabbitsRepository;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceProperties;
@@ -25,7 +26,7 @@ import java.util.Objects;
 @Configuration
 @EnableTransactionManagement
 @EnableJpaRepositories(
-        basePackageClasses = Rabbit.class,
+        basePackageClasses = RabbitsRepository.class,
         entityManagerFactoryRef = "rabbitsEntityManagerFactory",
         transactionManagerRef = "rabbitsTransactionManager"
 )

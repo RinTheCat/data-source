@@ -1,4 +1,4 @@
-package com.exercise.datasource.domain.cats;
+package com.exercise.datasource.domain;
 
 import lombok.Data;
 

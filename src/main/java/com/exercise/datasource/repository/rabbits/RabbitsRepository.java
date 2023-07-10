@@ -1,5 +1,6 @@
-package com.exercise.datasource.domain.rabbits;
+package com.exercise.datasource.repository.rabbits;
 
+import com.exercise.datasource.domain.Rabbit;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;
